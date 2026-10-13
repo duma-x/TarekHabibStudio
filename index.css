@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 93%;
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 93%;
+    --popover: 0 0% 13%;
+    --popover-foreground: 0 0% 93%;
+    --primary: 38 58% 55%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 58%;
+    --accent: 38 58% 55%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 93%;
+    --border: 0 0% 18%;
+    --input: 0 0% 16%;
+    --ring: 38 58% 55%;
+    --radius: 0.5rem;
+    --sidebar: 0 0% 8%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-border: 0 0% 14%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Tajawal', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: hsl(0 0% 10%); }
+  ::-webkit-scrollbar-thumb { background: hsl(0 0% 25%); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(38 58% 55%); }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
+}
+
+@layer components {
+  .stat-card { @apply bg-card rounded-xl border border-border p-5; }
+  .page-title { @apply text-xl font-bold text-foreground; }
+  .form-label { @apply text-sm font-medium text-muted-foreground mb-1 block; }
+  .table-row { @apply border-b border-border hover:bg-muted/30 transition-colors; }
+  .status-badge { @apply inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold; }
+  .btn-primary { @apply bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-lg px-4 py-2 text-sm font-medium; }
+  .btn-ghost { @apply text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors rounded-lg px-3 py-2 text-sm; }
+}
